@@ -1,0 +1,45 @@
+<div>
+    <h1 style="text-align: center;">View Details!</h1>
+    <hr />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" ng-repeat="item in viewBookTh">{{item}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr class="modalData" ng-repeat="item in bookView" data-toggle="modal" data-target="#myModal" data-item="{{item}}"> -->
+                <tr class="modalData" id="myBtn" ng-repeat="item in bookView" ng-click=openModal(item)>
+                <td>{{item.bookName}}</td>
+                <td>{{item.bookType}}</td>
+                <td>{{item.authorName}}</td>
+                <td>{{item.bookPage}}</td>
+                <td>{{item.publisherName}}</td>
+                <td>{{item.date | date}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.bookTotalNumber}}</td>
+                <td>{{item.bookTotalNumber - item.issuedBook}}</td>
+                <td>{{item.issuedBook}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Book Details</h4>{{dataItem}}
+            </div>
+            <div class="modal-body">
+                <div id="bookName">{{bookName}}</div>
+                <p>Some text in the modal.</p>
+                <input type="text" name="bookId" ng-model="bookId"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,51 @@
+<!-- <div>
+    <h1 style="text-align: center;">Book Name : {{item.bookName}}</h1>
+    <hr />
+    <table class="table table-striped" style="overflow:scroll;">
+        <thead>
+            <tr>
+                <th scope="col" ng-repeat="item in viewBookTh">{{item}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="modalData" id="myBtn" ng-repeat="row in studentDetails">
+                <td>{{row.studentName}}</td>
+                <td>{{row.fromDate | date}}</td>
+                <td>{{row.toDate | date}}</td>
+                <td>{{row.returnDate | date}}</td>
+                <td><span ng-if="row.returnStatus===true">Not Yet Returned</span>
+                    <span ng-if="row.returnStatus!==true">Returned</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<div class="modal-header">
+    <h3>
+        <span>Book Name :<strong> {{item.bookName}}</strong></span>
+    </h3>
+
+</div>
+
+<div class="modal-body" style="border:1px solid #e3e7e8; border-radius: 5px;">
+    <div class="container-fulid " style="height: 250px;overflow-y: scroll; ">
+
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th scope="col " ng-repeat="item in viewBookTh ">{{item}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in studentDetails ">
+                    <td>{{row.studentName}}</td>
+                    <td>{{row.fromDate | date}}</td>
+                    <td>{{row.toDate | date}}</td>
+                    <td>{{row.returnDate | date}}</td>
+                    <td><span ng-if="row.returnStatus===true ">Not Yet Returned</span>
+                        <span ng-if="row.returnStatus!==true ">Returned</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
