@@ -2,6 +2,10 @@
 <html ng-app="app">
 
 <head>
+	<!-- <meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
@@ -36,146 +40,17 @@
 <body>
     <nav class="navbar navbar-inverse" role="navigation" style="background: #2E697A; border:0;">
         <div class="navbar-header">
-            <!-- <a ui-sref="hello" ui-sref-active="active">Hello</a>
-    <a ui-sref="about" ui-sref-active="active">About</a> -->
-            <!-- <a class="navbar-brand" ui-sref="home" ui-sref-active="active">Book Management</a> -->
             <a class="navbar-brand" ui-sref="home" ui-sref-active="active">Book Entry</a>
             <a class="navbar-brand" ui-sref="view" ui-sref-active="active">Book Details</a>
             <a class="navbar-brand" ui-sref="issue" ui-sref-active="active">Issue Book</a>
             <a class="navbar-brand" ui-sref="return" ui-sref-active="active">Return Book</a>
-            <!-- <a class="navbar-brand" ui-sref="popUp" ui-sref-active="active">popUp</a> -->
         </div>
-        <!-- <ul class="nav navbar-nav" style="display: inline-block;">
-        <li><a ui-sref="home">Book Entry</a></li>
-        <li><a ui-sref="about">Book Details</a></li>
-        <li><a ui-sref="about">Issue Book</a></li>
-        <li><a ui-sref="about">Return Book</a></li>
-    </ul> -->
+       
     </nav>
-    <!--  <nav class="nav" style="background: #62D9F9; color: white;">
-  <a class="nav-link active" ui-sref="/home">Book Entry</a>
-  <a class="nav-link" ui-sref="/home">Book Details</a>
-  <a class="nav-link" ui-sref="/home">Issue Book</a>
-  <a class="nav-link " ui-sref="/home">Return Book</a>
-</nav> -->
-    <!-- <div class="container" style="margin: 0px;width:100%">
-  <div ui-view></div>
-</div> -->
+   
     <ui-view></ui-view>
-    <!-- 
-    <h1 style="text-align: center;">Book Details!</h1><hr>
-
-
-   <form name="bookDetails" style="">
-  <div class="form-group row">
-  <div class="col-sm-2"></div>
-    <label for="staticEmail" class="col-sm-3 col-form-label">Book Name</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control"  placeholder="Book Name" ng-model="ui.bookName">
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Book Author</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="auhtorName" placeholder="Auhtor Name" ng-model="ui.authorName">
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Book Page</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="bookPage" placeholder="Book Page" ng-model="ui.bookPage">
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Title</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="title" placeholder="Title" ng-model="ui.bookTitle">
-    </div>
-
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Publisher Name</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="publisherName" placeholder="Publisher Name" ng-model="ui.publisherName">
-    </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Publisher Date</label>
-    <div class="col-sm-5">
-      <input type="date" class="form-control" name="publishDate" placeholder="Publisher Date" ng-model="ui.date">
-    </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-sm-2"></div>
-      <button type="submit" class="btn btn-primary mb-2" ng-click="save()">Save</button>
-    </div>
-
-</form> -->
-    <!-- 
-    <form name="details">
-      <div>
-       Name : <input type="text" ng-model="ui.name" name="name" placeholder="Name" ng-pattern="/[A-Za-z1-9]$/"><br>
-      </div>
-      <div>
-        Mobile : <input type="number" ng-model="ui.number" name="number" placeholder="Mobile Number">
-      </div>
-      <div>
-       Male: <input type="checkbox" name="male" value="male"ng-model=ui.check>
-       Female: <input type= "checkbox" name="female" value="female" ng-model=ui.checkfemale>
-       </div>
-      <div>
-        Email : <input type="email" ng-model="ui.email" name="email" placeholder="Email">
-      </div>
-      <div>
-        Description : <textarea ng-model="ui.text_area"></textarea>
-      </div>
-      <div>
-        State : <select ng-model="ui.selectState" ng-options="v as v for (k,v) in selectOption">
-          <option value="">select</option>
-        </select>
-      </div>
-      <div>
-        Date : <input type="date" ng-model="ui.date" name="email" placeholder="Email">
-      </div>{{today - dateYear}} 
-      <div ng-if="details.$invalid!==true">
-        <button ng-click="save()">Save</button>{{dataNew}}
-      </div>
-    </form>
-    <div ng-if="showForm===true">
-    <table>
-        <tr>
-          <th ng-repeat="item in thOption">{{item}}</th>
-        </tr>
-        <tbody>
-          <tr ng-repeat="item in displayData">
-            <td>{{item.name}}</td>
-            <td>{{item.number}}</td>
-            <td>
-              <span ng-if="item.check==true">Male</span>
-              <span ng-if="item.checkfemale==true">Female</span></td>
-              <td>{{item.email}}</td>
-              <td>{{item.text_area}}</td>
-            <td>{{item.selectState}}</td>
-            <td>{{item.date | date}}</td>
-            <td>{{item.age}}</td>
-          </tr>
-        </tbody>
-      </table>
-      </div> -->
-    <!--<div ng-if="showForm===true">-->
-    <!--  Name : <span>{{ui.name}}</span><br>-->
-    <!--  Mobile : <span>{{ui.number}}</span><br>-->
-    <!--  Email : <span>{{ui.email}}</span><br>-->
-    <!--  Desc : <span>{{ui.text_area}}</span><br>-->
-    <!--  State: <span>{{ui.selectState}}</span><br>-->
-    <!--  Type : <span ng-if="ui.check==true">Male</span>-->
-    <!-- <span ng-if="ui.checkfemale==true">Female</span>-->
-    <!--</div>-->
+   
+   
 </body>
 
 </html>
