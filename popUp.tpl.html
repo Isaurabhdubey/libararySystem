@@ -1,0 +1,27 @@
+
+<div>
+    <h1 style="text-align: center;">View Details!</h1>
+    <hr />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" ng-repeat="item in viewBookTh">{{item}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr class="modalData" ng-repeat="item in bookView" data-toggle="modal" data-target="#myModal" data-item="{{item}}"> -->
+                <tr class="modalData" id="myBtn" ng-repeat="item in bookView" ng-click=openModal(item)>
+                <td>{{item.bookName}}</td>
+                <td>{{item.bookType}}</td>
+                <td>{{item.authorName}}</td>
+                <td>{{item.bookPage}}</td>
+                <td>{{item.publisherName}}</td>
+                <td>{{item.date | date}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.bookTotalNumber}}</td>
+                <td>{{item.bookTotalNumber - item.issuedBook}}</td>
+                <td>{{item.issuedBook}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
