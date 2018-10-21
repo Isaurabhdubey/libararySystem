@@ -2,7 +2,7 @@
 // var app=angular.module('MyApp', []);
 (function() {
 
-    var app = angular.module('app', ['ui.router','ui-notification', 'ui.bootstrap']);
+    var app = angular.module('app', ['ui.router', 'ui-notification', 'ui.bootstrap']);
     app.constant('_', window._)
         // use in views, ng-repeat="x in _.range(3)"
         .run(function($rootScope) {
@@ -19,7 +19,7 @@
     // });
     app.config(config);
 
-    function config($stateProvider) {
+    function config($stateProvider, $urlRouterProvider) {
         // var helloState = {
         //   name: 'home',
         //   url: '/home',
@@ -31,37 +31,38 @@
         //   url: '/about',
         //   template: '<h3>Its the UI-Router hello world app!</h3>'
         // }
+        $urlRouterProvider.otherwise('/home');
 
         $stateProvider.state({
-            name: 'home',
-            url: '/home',
-            templateUrl: 'entryBook.tpl.html',
-            controller: 'EntryBookCtrl'
-        })
-        .state({
-            name: 'view',
-            url: '/view',
-            templateUrl: 'viewBook.tpl.html',
-            controller: 'ViewBookCtrl'
-        })
-        .state({
-            name: 'issue',
-            url: '/issue',
-            templateUrl: 'issueBook.tpl.html',
-            controller: 'IssueBookCtrl'
-        })
-        .state({
-            name: 'return',
-            url: '/return',
-            templateUrl: 'returnBook.tpl.html',
-            controller: 'ReturnBookCtrl'
-        })
-        .state({
-            name: 'popUp',
-            url: '/popUp/:item',
-            templateUrl: 'popUp.tpl.html',
-            controller: 'PopUpCtrl'
-        });
+                name: 'home',
+                url: '/home',
+                templateUrl: 'entryBook.tpl.html',
+                controller: 'EntryBookCtrl'
+            })
+            .state({
+                name: 'view',
+                url: '/view',
+                templateUrl: 'viewBook.tpl.html',
+                controller: 'ViewBookCtrl'
+            })
+            .state({
+                name: 'issue',
+                url: '/issue',
+                templateUrl: 'issueBook.tpl.html',
+                controller: 'IssueBookCtrl'
+            })
+            .state({
+                name: 'return',
+                url: '/return',
+                templateUrl: 'returnBook.tpl.html',
+                controller: 'ReturnBookCtrl'
+            })
+            .state({
+                name: 'popUp',
+                url: '/popUp/:item',
+                templateUrl: 'popUp.tpl.html',
+                controller: 'PopUpCtrl'
+            });
         // .state('offlineContent.videoDetails', {
         //   url: '/po/:videoId',
         //   views: {
