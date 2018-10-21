@@ -1,12 +1,12 @@
 <div>
     <h1 style="text-align: center;">Issue Details!</h1>
     <hr />
-    <form name="bookDetails" style="">
+    <form name="issueForm" style="">
         <div class="form-group row">
             <div class="col-sm-2"></div>
-            <label for="name" class="col-sm-3 col-form-label">Book Type</label>
+            <label for="bookType" class="col-sm-3 col-form-label">Book Type</label>
             <div class="col-sm-5">
-                <select class="custom-select form-control" data-ng-options="item as item for item in bookType" ng-model="isssueDetails.bookType" ng-change="bookTypeChange(isssueDetails.bookType)">
+                <select class="custom-select form-control" name="bookType" data-ng-options="item as item for item in bookType" ng-model="isssueDetails.bookType" ng-change="bookTypeChange(isssueDetails.bookType)" required>
                     <option value='' selected>Select Book Type</option>
                 </select>
             </div>
@@ -14,27 +14,27 @@
         <div ng-if="hideDetails==true">
             <div class="form-group row">
                 <div class="col-sm-2"></div>
-                <label for="name" class="col-sm-3 col-form-label">Book Name</label>
+                <label for="bookName" class="col-sm-3 col-form-label">Book Name</label>
                 <div class="col-sm-5">
-                    <select class="custom-select form-control" data-ng-options="item as item.bookName for item in bookDetails" ng-model="isssueDetails.bookName" ng-change="bookChanged(isssueDetails.bookName)">
+                    <select class="custom-select form-control" name="bookName" data-ng-options="item as item.bookName for item in bookDetails" ng-model="isssueDetails.bookName" ng-change="bookChanged(isssueDetails.bookName)" required>
                         <option value='' selected>Select Books</option>
                     </select>
                 </div>
             </div>
         </div>
         <div ng-if="showDetailsBook===true">
-            <div class="form-group row">
+            <div class="form-group row" ng-if="showDetailsBook===true">
                 <div class="col-sm-2"></div>
                 <label for="auhtorName" class="col-sm-3 col-form-label">Book Author</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" name="auhtorName" placeholder="Auhtor Name" ng-model="isssueDetails.authorName" disabled />
+                    <input type="text" class="form-control" name="auhtorName" placeholder="Auhtor Name" ng-model="isssueDetails.authorName" readonly />
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row" ng-if="showDetailsBook===true">
                 <div class="col-sm-2"></div>
                 <label for="publisherName" class="col-sm-3 col-form-label">Publisher Name</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" name="publisherName" placeholder="Publisher Name" ng-model="isssueDetails.publisherName" disabled />
+                    <input type="text" class="form-control" name="publisherName" placeholder="Publisher Name" ng-model="isssueDetails.publisherName" readonly />
                 </div>
             </div>
         </div>
@@ -42,26 +42,26 @@
             <div class="col-sm-2"></div>
             <label for="studentName" class="col-sm-3 col-form-label">Student Name</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" name="studentName" placeholder="Student Name" ng-model="isssueDetails.studentName" />
+                <input type="text" class="form-control" name="studentName" placeholder="Student Name" ng-model="isssueDetails.studentName" required />
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-2"></div>
             <label for="fromDate" class="col-sm-3 col-form-label">From Date</label>
             <div class="col-sm-5">
-                <input type="date" class="form-control" name="fromDate" placeholder="Publisher Date" ng-model="isssueDetails.fromDate" />
+                <input type="date" class="form-control" name="fromDate" placeholder="Publisher Date" ng-model="isssueDetails.fromDate" required />
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-2"></div>
             <label for="toDate" class="col-sm-3 col-form-label">To Date</label>
             <div class="col-sm-5">
-                <input type="date" class="form-control" name="toDate" placeholder="Publisher Date" ng-model="isssueDetails.toDate" />
+                <input type="date" class="form-control" name="toDate" placeholder="Publisher Date" ng-model="isssueDetails.toDate" required />
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-9"></div>
-            <button type="submit" class="btn btn-primary mb-2 col-sm-1" ng-click="issueSave(isssueDetails)">Save</button>
+            <button type="submit" ng-disabled="issueForm.$invalid" class="btn btn-primary mb-2 col-sm-1" ng-click="issueSave(isssueDetails)">Save</button>
         </div>
     </form>
 </div>

@@ -1,12 +1,12 @@
 <div>
     <h1 style="text-align: center;">Return Details!</h1>
     <hr />
-    <form name="bookDetails" style="">
+    <form name="returnForm" style="">
         <div class="form-group row">
             <div class="col-sm-2"></div>
-            <label for="name" class="col-sm-3 col-form-label">Book Type</label>
+            <label for="bookType" class="col-sm-3 col-form-label">Book Type</label>
             <div class="col-sm-5">
-                <select class="custom-select form-control" data-ng-options="item as item for item in bookType" ng-model="returnDetails.bookType" ng-change="bookReturnType(returnDetails.bookType)">
+                <select class="custom-select form-control" name="bookType" data-ng-options="item as item for item in bookType" ng-model="returnDetails.bookType" ng-change="bookReturnType(returnDetails.bookType)" required>
                   <option value='' selected>Select Book Type</option>
                 </select>
             </div>
@@ -16,7 +16,7 @@
                 <div class="col-sm-2"></div>
                 <label for="bookName" class="col-sm-3 col-form-label">Book Name</label>
                 <div class="col-sm-5">
-                    <select class="custom-select form-control" data-ng-options="item as item.bookName for item in returnBookDetails" ng-model="returnDetails.bookName" ng-change="bookChangedList(returnDetails.bookName)">
+                    <select class="custom-select form-control" name="bookName" data-ng-options="item as item.bookName for item in returnBookDetails" ng-model="returnDetails.bookName" ng-change="bookChangedList(returnDetails.bookName)" required>
                       <option value='' selected>Select Books</option>
                     </select>
                 </div>
@@ -42,7 +42,7 @@
             <div class="col-sm-2"></div>
             <label for="studentName" class="col-sm-3 col-form-label">Student Name</label>
             <div class="col-sm-5">
-                <select class="custom-select form-control" ng-model="returnDetails.studentName" ng-change="selectStudentList(returnDetails.studentName)">
+                <select class="custom-select form-control" name="studentName" ng-model="returnDetails.studentName" ng-change="selectStudentList(returnDetails.studentName)" required>
                   <option value="" selected>Select Student</option>
                   <option ng-repeat="item in studentList track by $index" value="{{item}}">{{item.studentName}}</option>
                 </select>
@@ -57,7 +57,7 @@
     </div> -->
         <div class="form-group row">
             <div class="col-sm-9"></div>
-            <button type="submit" class="btn btn-primary mb-2 col-sm-1" ng-click="returnSave(returnDetails)">Save</button>
+            <button type="submit" ng-disabled="returnForm.$invalid" class="btn btn-primary mb-2 col-sm-1" ng-click="returnSave(returnDetails)">Save</button>
         </div>
     </form>
 </div>

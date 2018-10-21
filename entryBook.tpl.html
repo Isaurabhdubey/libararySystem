@@ -1,67 +1,67 @@
 <div>
     <h1 style="text-align: center;">Book Details!</h1>
     <hr />
-  <form name="bookDetails" style="">
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="staticEmail" class="col-sm-3 col-form-label">Book Type</label>
-    <div class="col-sm-5">
-    <select class="custom-select form-control" data-ng-options="item as item for item in bookType" ng-model="ui.bookType">
+    <form name="bookDetails" style="">
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="bookType" class="col-sm-3 col-form-label">Book Type</label>
+            <div class="col-sm-5">
+                <select class="custom-select form-control" name="bookType" data-ng-options="item as item for item in bookType" ng-model="ui.bookType" required>
       <option value='' selected>Open this select menu</option>
     </select>
-    </div>
-  </div>
-  <div class="form-group row">
-  <div class="col-sm-2"></div>
-    <label for="staticEmail" class="col-sm-3 col-form-label">Book Name</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control"  placeholder="Book Name" ng-model="ui.bookName" />
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Book Author</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="auhtorName" placeholder="Auhtor Name" ng-model="ui.authorName" />
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Book Page</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="bookPage" placeholder="Book Page" ng-model="ui.bookPage" />
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="bookTotalNumber" class="col-sm-3 col-form-label">Number Of Copies</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="bookTotalNumber" placeholder="Number Of Copies" ng-model="ui.bookTotalNumber" />
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Title</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="title" placeholder="Title" ng-model="ui.bookTitle" />
-    </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="bookName" class="col-sm-3 col-form-label">Book Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="bookName" placeholder="Book Name" ng-model="ui.bookName" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="auhtorName" class="col-sm-3 col-form-label">Book Author</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="auhtorName" placeholder="Auhtor Name" ng-model="ui.authorName" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="bookPage" class="col-sm-3 col-form-label">Book Page</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="bookPage" placeholder="Book Page" ng-model="ui.bookPage" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="bookTotalNumber" class="col-sm-3 col-form-label">Number Of Copies</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="bookTotalNumber" placeholder="Number Of Copies" ng-model="ui.bookTotalNumber" required/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="title" class="col-sm-3 col-form-label">Title</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="title" placeholder="Title" ng-model="ui.bookTitle" required />
+            </div>
 
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Publisher Name</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" name="publisherName" placeholder="Publisher Name" ng-model="ui.publisherName" />
-    </div>
-  </div>
-  <div class="form-group row">
-      <div class="col-sm-2"></div>
-    <label for="inputPassword" class="col-sm-3 col-form-label">Publisher Date</label>
-    <div class="col-sm-5">
-      <input type="date" class="form-control" name="publishDate" placeholder="Publisher Date" ng-model="ui.date" />
-    </div>
-  </div>
-  <!-- <div class="form-group">
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="publisherName" class="col-sm-3 col-form-label">Publisher Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="publisherName" placeholder="Publisher Name" ng-model="ui.publisherName" required/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <label for="publishDate" class="col-sm-3 col-form-label">Publisher Date</label>
+            <div class="col-sm-5">
+                <input type="date" class="form-control" name="publishDate" placeholder="Publisher Date" ng-model="ui.date" required />
+            </div>
+        </div>
+        <!-- <div class="form-group">
   <label class="col-sm-3 control-label">Date Of Birth</label>
     <div class="col-sm-5">
       <p class="input-group">
@@ -74,10 +74,10 @@
                        Select Date of Birth</span>
     </div>
 </div> -->
-    <div class="form-group row" style="margin-top: 2%">
-      <div class="col-sm-9"></div>
-      <button type="submit" class="btn btn-primary mb-2 col-sm-1" ng-click="saveBook(ui)">Save</button>
-    </div>
-</form>
-<!-- <button class="btn btn-primary" ng-click="success()">Primary Notification</button> -->
+        <div class="form-group row" style="margin-top: 2%">
+            <div class="col-sm-9"></div>
+            <button type="submit" ng-disabled="bookDetails.$invalid" class="btn btn-primary mb-2 col-sm-1" ng-click="saveBook(ui)">Save</button>
+        </div>
+    </form>
+    <!-- <button class="btn btn-primary" ng-click="success()">Primary Notification</button> -->
 </div>
